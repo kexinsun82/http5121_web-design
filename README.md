@@ -10,7 +10,7 @@ This course delivers the fundamentals of well-formed, semantic HTML markup and C
 
 ## Assignments Repo
 After all assignments are graded, I will change the repository to public.  
-[Web Design - Assignments Repo](https://github.com/kexinsun82/http5121_web-design_assignments.git)
+[Web Design - Assignments Repo](https://github.com/kexinsun82/humber-assignments/tree/6fed5b0924b85436afe46c64ea885f6f371c3b62/1.1-web%20design%20HTTP5121)
 
 ## Outcomes
 - Construct a website using current versions of HTML
