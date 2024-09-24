@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><!-- lang (language) is set to English (en) -->
+  <head>
+      <!-- contains metadata about the page -->
+      <!-- meta is a self-closing tag (there is no closing tag) -->
+      <meta charset="utf-8"><!-- required: sets the encoding for the page -->
+      <title>My first HTML page</title><!-- tab title -->
+  </head>
+  <body>
+    <!-- This is where all of your content in the browser window goes. -->
+    <!--
+      EXAMPLE TABLE OF CONTENTS:
+      1. Intro to HTML
+      -- 1.1 Basic text-related tags
+      ---- 1.1.1.1 p (paragraph)
+    -->
+    <!-- Headings go from h1 to h6. Avoid skipping heading level numbers when defining a subheading. -->
+    <h1>This is my first HTML page</h1><!-- heading 1 -->
+    <p>This is some random content with a <a href="#subsection-2">link to the second h2 below</a>.</p>
+    <p>Sometimes you need dummy links. To do this, you can just use # without an id as the href. <a href="#">Example link</a></p>
+    <h2>My first subsection</h2>
+    <p>This is a paragraph.</p>
+    <!-- em -->
+    <p>This is another paragraph. This is <em>italicized</em>. This is <strong>bolded</strong>. This is <strong><em>italicized and bolded (very strongly emphasized)</em></strong>.</p><!-- When nesting elements, close the inner elements before the outer elements. -->
+    <h3>This is a subheading of h2</h3>
+    <!-- To create a link, the "a" element MUST have an href attribute. -->
+    <!-- Link to Google is an external link -->
+    <p>This is a paragraph with a <a href="https://www.google.ca">link to Google</a>. Without an <strong>href</strong>, the "a" is just a <a>static anchor</a>.</p>
+    <!-- Image source: https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Vulpes_vulpes_ssp_fulvus.jpg/220px-Vulpes_vulpes_ssp_fulvus.jpg -->
+    <!-- The below src is the page to the image file (. means current directory -- same directory that the current HTML page is in) -->
+    <img src="./img/red-fox.jpg" alt="Red fox standing in the snow" width="150"><!-- img is a self-closing tag -->
+    <p>Go to the <a href="lists.html">Lists page</a>.</p>
+    <h2 id="subsection-2">This is another subheading</h2>
+    <p>HTML has some special characters.</p>
+    <p>&copy; &egrave; &lt; &gt; &amp; </p>
+  </body>
+</html>

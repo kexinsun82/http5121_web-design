@@ -1,0 +1,90 @@
+/* 
+CSS Rule Syntax
+<selector> {
+  <CSS statement>
+}
+*/
+body {
+  /*font-family: Arial, Helvetica, sans-serif;*/ /* font stack */
+  /*font-size: 1em;*/
+  /*line-height: 1.25;*/ /* using not unit makes this multiplier */
+  font: normal 1em/1.25 Arial,Helvetica,sans-serif;
+  margin: 0;
+}
+
+h1 {
+  color: red; 
+  font-size: 2.5em;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+main h2 {
+  font-style: italic;
+}
+
+#site-name {
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+#header {
+  background-color: antiquewhite;
+  padding: 1em;
+  border-bottom: 1px;
+}
+/* Link Styles */
+a:link,
+#header a:link {
+  color: red;
+  text-decoration: none;
+}
+main a:visited,
+#sidebar a:hover {
+  color: green;
+}
+a:hover,
+#header a:hover {
+  color: #000;
+}
+a:active {
+  color: violet;
+}
+
+.menu {
+  padding: 0;
+  list-style: none;
+}
+.menu li {
+  display: inline-block;
+  margin-right: 2em;
+}
+.menu li:last-child {
+  margin-right: 0;
+}
+
+a.button,
+a.buttton:visited,
+#sidebar a.button:visited {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5em 0.8em;
+  border-radius: 0 5px 10px 15px;
+  display: inline-block;
+}
+
+#sidebar a.button:hover {
+  background-color: red;
+}
+
+#sidebar {
+  font-size: 0.8em;
+  border: 2px solid black;
+  border-radius: 0.5em;
+}
+
+.read-more {
+  font-size: 14px;
+}

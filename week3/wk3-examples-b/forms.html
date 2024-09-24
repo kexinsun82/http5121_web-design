@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <h1>HTML Forms</h1>
+    <!-- All stuff that belongs to forms - including submit buttons - go inside a FORM element. -->
+    <!-- 
+      There is a method attribute (GET by default). This sets how form
+      data will be submitted.
+      
+      - "get": GET forms (the default if the method attribute is not set) submit the data 
+               via the URL. This is usually used for simple search
+               forms where it doesn't matter if the data is visible in the URL. Searches are
+               not secure data so this doesn't matter. It's also useful to be able to bookmark
+               a search page. Since GET forms pass data via the URL, there is a character limit on
+               GET form data.
+      - "post": POST forms do NOT submit via the URL, so this is inherently more secure (i.e. the
+                data is not immediately exposed). Most forms should use POST as the submission
+                method. Wherever there is more sensitive data, use POST (e.g. a login form or 
+                checkout form).
+    -->
+    <!--
+      There is an action attribute. This value is the destination (URI/URL) where the form data
+      will be submitted to. As we're not doing any server-side form processing in this class, you
+      can omit this attribute for this class, but it's important to know about this attribute.
+    -->
+    <h2>Search form example</h2>
+    <form method="get">
+      <!-- Using the for attribute and pointing to an id explicitly labels a field (e.g. input). This is important for accessibility (for screen reader users and for users with motor skill problems). -->
+      <label for="search">Search:</label>
+      <input type="text" id="search" name="q" placeholder="e.g. red fox">
+      <button type="submit">Search now</button>
+    </form>
+
+    <h2>Login form example</h2>
+    <!-- NOTE: get is not secure because you can see the values in plain text in the URL when submitting. get also has a size limit while post does not. -->
+    <form method="post">
+      <!-- div is just a generic wrapper element (it displays as a block by default)-->
+      <div>
+        <label for="user">Username:</label>
+        <input type="text" id="user" name="user" placeholder="john123">
+      </div>
+      <div>
+        <label for="pw">Password:</label>
+        <input type="password" id="pw" name="pw" placeholder="******">
+      </div>
+      <button type="submit">Log in</button>
+    </form>
+
+    <h2>Random form example</h2>
+    <p>The following is just a form used to test out a few form fields.</p>
+    <form>
+      <div>
+        <label for="family-size">Number of people in your household:</label>
+        <input type="number" id="family-size" name="family" min="1" placeholder="1">
+        <!-- demo: field specifying number pad input but looks like a text field (no arrows)-->
+        <!-- use inputmode="numeric" -->
+        <input type="text" id="test-number" name="test-number" inputmode="numeric" placeholder="e.g. 2">
+      </div>
+      <div>
+        <label for="phone">Phone number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="john.doe@example.com">
+      </div>
+      <input type="hidden" name="test" value="My test value">
+      <div>
+        <input type="checkbox" id="subscribe" name="subscribe" value="subscribed">
+        <label for="subscribe">Subscribe to our newsletter</label><!-- using this order so the label text goes on the right of the checkbox -->
+      </div>
+      <fieldset>
+        <!-- a fieldset defines a set of related fields -->
+        <legend>Select all your interests</legend><!-- the legend names the fieldset-->
+        <!-- For a checkbox list (below) or a radio button group, give the checkboxes/radio buttons the same name value so they work as a group. -->
+         <!-- Use the checked attribute to select a checkbox or radio button by default. -->
+        <input type="checkbox" id="wood" name="interests" value="Woodworking" checked>
+        <label for="wood">Woodworking</label>
+        <input type="checkbox" id="knitting" name="interests" value="Knitting">
+        <label for="knitting">Knitting</label>
+        <input type="checkbox" id="other" name="interests" value="Other">
+        <label for="other">Other</label>
+      </fieldset>
+      <fieldset>
+        <legend>How did you hear about us?</legend>
+        <input type="radio" id="internet" name="media" value="Internet" checked>
+        <label for="internet">Internet</label>
+        <input type="radio" id="other-media" name="media" value="Other media">
+        <label for="other-media">Other media</label>
+      </fieldset>
+      <div>
+        <label for="message">Your message:</label>
+      </div>
+      <div>
+        <!-- If you're using placeholder text with textarea, do not add any whitespace, new line or other characters between the opening and closing tags because anything between the opening and closing tags are interpreted as the contents of the textarea (i.e. as if it has been filled in). -->
+        <textarea id="message" name="message" rows="10" cols="100" placeholder="Your message text..."></textarea>
+      </div>
+      <!-- select: dropdown boxes-->
+      <div>
+        <label for="reason">Reason for enquiry:</label>
+        <select id="reason" name="reason">
+          <option value="" disabled selected>--Choose a reason--</option>
+          <option value="sales">Sales enquiries</option>
+          <optgroup label="Other enquiries">
+            <option value="legal">Legal enquiries</option>
+            <option value="general">General enquiries</option>
+          </optgroup>
+        </select>
+      </div>
+      <button type="submit">Submit this form</button>
+      <button type="button">Click to do something</button><!-- type="button" needs a custom script to specify what the button will do when clicked -->
+      <button type="reset">Clear form</button>
+    </form>
+  </body>
+</html>

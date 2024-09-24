@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML5 Semantic Layout Tags</title>
+  </head>
+  <body>
+    <!-- 
+      The following is a typical site's page structure (note that this can differ a little
+      depending on the layout/content but the general idea is the same). In general, you have:
+    
+      - a site header with the site name (a link to the home page)
+      - the site menu (usually also in the header)
+      - main content
+      - a site footer (it may or may not have a site menu in it)
+      - sidebar(s) (usually in non-home pages)
+    -->
+
+    <!-- For major parts of a page where the styling will most likely have some unique parts,
+         such as a header, it's useful to give it an id (for styling purposes later). We can
+         omit it for now while you're getting a grasp of the semantic layout tags. -->
+    <header>
+      <h2>
+        <a href="#">Site Name</a>
+      </h2>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- Use the h1 for the main content's title because this is what the page is actually about.-->
+      <h1>This is an article title</h1>
+      <p>Blah, blah, blah...</p>
+      <h2>Subheading</h2>
+      <p>...</p>
+
+      <footer>
+        <h2>Related news</h2>
+        <ul>
+          <li><a href="#">Random news articles are everywhere</a></li>
+          <li><a href="#">Cats have taken over the Internet</a></li>
+        </ul>
+      </footer>
+    </main>
+    <aside>
+      <section>
+        <h2>Local news</h2>
+        <ul>
+          <li><a href="#">Article 1</a></li>
+          <li><a href="#">Article 2</a></li>
+        </ul>
+        <a href="#">Read more local news</a>
+      </section>
+    </aside>
+    <footer>
+      <div>&copy; Copyright Site Name, 2023.</div>
+    </footer>
+  </body>
+</html>
