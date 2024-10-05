@@ -1,0 +1,35 @@
+.flex-container-row,
+.flex-container-column,
+.flex-item {
+  border:1px solid #000;
+}
+.flex-container-row, .flex-container-column {
+  background-color:#c498ff; /* so flex container is easily visible */
+}
+
+.flex-container-row {
+  padding:1em;
+  display:flex;
+  /* flex-direction:row;
+  flex-wrap:wrap; */
+  flex-flow: row wrap;
+  justify-content:space-between;
+  /* align-items:center; */
+  /* gap:20px; */
+}
+.flex-container-column {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.flex-item {
+  background-color:#fdd489; /* so flex item is easily visible */
+  flex-grow:1;
+  flex-shrink:1;
+  flex-basis:0;
+}
+
+.flex-item:nth-child(3) {
+  order:1;
+}

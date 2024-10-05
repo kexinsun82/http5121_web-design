@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Intro to flexbox</title>
+    <link rel="stylesheet" type="text/css" href="css/flex.css">
+  </head>
+  <body>
+    <h1>Intro to flexbox</h1>
+    <p>
+      Flexbox is a layout system in CSS. It consists of a wrapper container called a "flex container".
+      The children of this flex container are the elements you want to "lay out". They are called "flex items".
+    </p>
+    <p>
+      Different properties are used for the flex container and for the flex items. For more predictable behaviour,
+      do not set flex item properties on a flex container and vice versa.
+    </p>
+    <p>
+      As an example the below example is using divs just to demo the properties but you can use any element 
+      as the flex container (e.g. section) and any element as a flex item (e.g. if building a page layout, 
+      main could be a flex item).
+    </p>
+    <!-- I like to use a class for setting something as a flex container so that it's reusable (you'd probably
+         use flex more than once in a page). If you are using flex for a horizontal layout you may want to 
+         give it a name to differentiate by giving a descriptive class name. Note that the class name is
+         arbitrary but since I want to be able to reuse the class, I've indicated that the container is
+         for a row (horizontal) layout. In most cases, you'd probably be using flexbox for horizontal
+         layouts. -->
+    <p>
+      In most cases, horizontal layouts are the most complicated
+      and you'd want the vertical layout to grow according to 
+      content length so I use the row layout in the majority of
+      cases.
+    </p>
+    <div class="flex-container-row">
+      <div class="flex-item">Item 1</div>
+      <div class="flex-item">Item 2</div>
+      <div class="flex-item">Item 3</div>
+      <div class="flex-item">Some content</div>
+      <div class="flex-item">Even more content</div>
+    </div>
+
+    <!-- LAYOUT EXAMPLE -->
+    <!--
+    <header id="header">
+      <h2 id="site-name"><a href="/">Learning CSS</a></h2>
+      <nav id="main-navigation" aria-label="Main navigation">
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <h1>Basic CSS</h1>
+      <p>This content will be used to demo some basic CSS flex properties.</p>
+    </main>
+    <aside id="sidebar-one">Sidebar one</aside>
+    <aside id="sidebar-two">Sidebar two</aside>
+    <footer id="footer">Footer</footer>
+    -->
+  </body>
+</html>

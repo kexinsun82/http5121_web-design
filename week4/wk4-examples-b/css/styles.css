@@ -1,0 +1,108 @@
+/*
+  CSS RULE SYNTAX:
+  <selector> {
+    <CSS statements>
+  }
+*/
+/*
+  Possible selectors:
+  - element (no symbols)
+  - #id (select by id, must be prepended with #)
+  - .class (select by class name, must be prepended with .)
+*/
+body {
+  /* font-family: Arial, Helvetica, sans-serif; */ /* font-family: font stack */
+  /* font-size: 1em; */ /* em (unit) is a multiplier. It takes the current default font size (for the current element) and multiplies by the multiplier number. */
+  /* By default, 1em or 100% for font size usually corresponds to 16px. */
+  /* line-height:1.25; */ /* using no unit makes this a multiplier */
+  font:normal 1em/1.25 Arial,Helvetica,sans-serif; /* shorthand property to set style, size, line-height, and font-family all in one go */
+  margin:0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1 {
+  color:red; /* color = text color (can use named colors, hex code, etc) */
+  font-size:2.5em; /* this results in approx. 40px (2.5 * 16.px) */
+}
+h2 {
+  font-weight:normal;
+}
+/* select all h2 elements which are descendants of main */
+main h2 {
+  font-style:italic;
+}
+#site-name {
+  letter-spacing:5px; /* adjust kerning (space between characters */
+  margin:0; /* remove default large top/bottom margins for h2 */
+}
+#header {
+  background-color:darkgray;
+  padding:1em;
+  border-bottom:2px solid #000;
+}
+/* LINK STYLES */
+a:link,
+#header a:link {
+  color:red;
+  text-decoration:none; /* remove the default underline */
+}
+/* Pseudo-classes are a way for you to select an element in a certain state (e.g. :hover allows you to select an element that is being hovered over) */
+/* Possible link pseudo classes: 
+  - :link (all a elements which are links)
+  - :hover (element which is being hovered over)
+  - :visited (links which have been clicked on before)
+  - :active (elements which have the mouse down but before mouse up)
+  ** When using these pseudo classes, the order is important to ensure they're applied reliably.
+*/
+main a:visited,
+#sidebar a:visited {
+  color:green;
+}
+a:hover,
+#header a:hover {
+  color:black;
+}
+main a:active {
+  color:darkmagenta;
+}
+.menu {
+  padding:0;
+  list-style:none; /* ensure no bullet points on ul */
+}
+.menu li {
+  display:inline-block;
+  margin-right:2em;
+}
+/* Other pseudo classes (see PDF) are:
+ - :first-child
+ - :nth-child()
+*/
+.menu li:last-child {
+  margin:0;
+}
+/* select all a elements with the class="button" */
+a.button,
+button,
+a.button:visited,
+#sidebar a.button:visited {
+  background-color:#000;/* hex code for black */
+  color:#fff; /* hex code for white */
+  padding:0.5em 0.8em; /* with two values they set [top_bottom] [left_right] */
+  /* border-radius:0 5px 10px 15px; */ /* go from top-left corner and go around clockwise */
+  border-radius:0.5em;
+  display:inline-block; /* make sure the "button" still stays as a box even if the text breaks to multiple lines */
+}
+#sidebar a.button:hover {
+  background-color:red;
+}
+#sidebar {
+  font-size:0.8em;
+  border:2px solid #000; /* <border-width> <border-style> <border-color> */
+  padding:1em;
+  border-radius:0.5em;
+}
+
+.read-more {
+  font-size:14px;
+}
