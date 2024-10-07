@@ -5,6 +5,7 @@ This course delivers the fundamentals of well-formed, semantic HTML markup and C
 
 ## Tools & Skills
 - Visual Studio Code
+- Figma
 - HTML
 - CSS
 
