@@ -1,0 +1,28 @@
+.flex-container-row,
+.flex-container-column,
+.flex-item,
+.flex-item-inner {
+  border:1px solid #000;
+}
+.flex-container-row, .flex-container-column {
+  background-color:#c498ff; /* so flex container is easily visible */
+}
+
+.flex-container-row {
+  /* FLEX CONTAINER STUFF BELOW */
+  display:flex;
+  flex-flow:row wrap;
+}
+.flex-item {
+  background-color:#fdd489; /* so flex item is easily visible */
+
+  /* FLEX ITEM STUFF BELOW */
+  flex-grow:1;
+}
+.flex-item-inner {
+  background-color: #ffa908;
+  flex-grow:1;
+}
+h2 {
+  flex:1 1 100%;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nesting flex layouts</title>
+    <link rel="stylesheet" type="text/css" href="css/flex-nested.css">
+  </head>
+  <body>
+    <h1>Intro to flexbox - nesting layouts</h1>
+    <p>
+      Recall: Different properties are used for the flex container and for the flex items. You CANNOT set flex items
+      properties on a flex container and vice versa. Since this is the case, if you need to nest, you need to nest as follows:
+    </p>
+    <ul>
+      <li>
+        Outer flex container
+        <ul>
+          <li>Flex item</li>
+          <li>
+            Flex item
+            <ul>
+              <li>
+                Inner flex container
+                <ul>
+                  <li>Inner flex item</li>
+                  <li>Inner flex item</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Flex item</li>
+        </ul>
+      </li>
+    </ul>
+   
+    <h2>Nested flex layout</h2>
+    <div class="flex-container-row">
+      <div class="flex-item">Item 1</div>
+      <div class="flex-item">
+        Item 2
+        <!-- 
+          Note that you cannot just nest a flex
+          item directly within another flex item.
+          Instead nest a container THEN nest your
+          inner flex items.
+        -->
+        
+        <div class="flex-container-row">
+          <h2>Random section</h2>
+          <div class="flex-item-inner">Item</div>
+          <div class="flex-item-inner">Item</div>
+        </div>
+      </div>
+      <div class="flex-item">Item 3</div>
+    </div>
+
+    <h2>Another example</h2>
+  </body>
+</html>
