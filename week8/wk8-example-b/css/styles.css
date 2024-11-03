@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Open+Sans:ital,wght@0,300;1,300&display=swap');
+
+/*************************************************************
+ * TABLE OF CONTENTS
+ * =================
+ * 1. GENERAL/DEFAULT STYLES
+ * 2. HEADER
+ * -- 2a. Site name and logo
+ * -- 2b. Navigation
+ * 3. MAIN CONTENT
+ * -- 3a. Hero
+ * -- 3b. Other sections
+ * 4. FOOTER
+ * -- 4a. Navigation
+ *************************************************************/
+
+/* 1. GENERAL/DEFAULT STYLES */
+:root {
+  --accent-color: #E0376A;
+}
+/* Setting the box-sizing property like below is recommended so it follows CSS's typical cascading behaviour. By default the box-sizing property doesn't get inherited by the child elements. */
+html {
+  box-sizing:border-box;
+}
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+body {
+  font:300 1em/1.2 "Open Sans", sans-serif; /* default font size is 1em = 16px */
+  margin:0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family:"Lato", sans-serif;
+  font-weight:900;
+  text-transform:uppercase;
+}
+h2 {
+  font-size:1.5em;
+}
+h3 {
+  font-size:1.25em;
+}
+.content-wrapper {
+  max-width:1300px;
+  margin:0 auto;
+}
+a:link {
+  color:var(--accent-color);
+}
+a:hover {
+  text-decoration:none;
+}
+button, a:link.button {
+  background-color:#000;
+  color:#fff;
+  text-decoration:none;
+  font-family:inherit;
+  font-size:0.9375em; /* 15px / 16px = 0.9375 */
+  padding:0.8em; /* 12px padding / 15px = 0.8 */
+  border-radius:0.67em;
+  display:inline-block;
+  min-width:153px;
+  text-align:center; /* make sure button text is always centered */
+}
+button:hover, a:hover.button {
+  background-color:var(--accent-color);
+}
+.pink-bg button:hover,
+.pink-bg a:hover.button {
+  background-color:#000;
+  color:var(--accent-color);
+}
+.pink-bg {
+  background-color:var(--accent-color);
+}
+.pink-bg h3 a:link {
+  color:#fff;
+  text-decoration:none;
+}
+.pink-bg h3 a:hover {
+  color:#000;
+}
+
+
+/* 2. HEADER */
+#header {
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-between;
+  padding:2.125em 1.25em 2.375em 1.25em;
+}
+#header a:link,
+#header a:visited {
+  color:#000;
+  text-decoration: none;
+}
+
+/* -- 2a. Site name and logo */
+#logo-and-site-name {
+  font-size:2em; /* 32px / 16px = 2 */
+  margin:0;
+}
+#logo-and-site-name a::before {
+  content: "(^._.^)";
+  color:var(--accent-color);
+}
+
+/* -- 2b. Navigation */
+#main-navigation {
+  font-size:1.5em; /* 24px / 16px = 1.5 */
+  font-family: "Lato", sans-serif;
+  text-transform:uppercase;
+}
+#main-navigation a:hover {
+  color: var(--accent-color);
+}
+.menu {
+  display:flex;
+  list-style:none; /* get rid of the bullet points for ul */
+  column-gap:1.61em; /* 38.75px gap / 24px (new default set in line 53 above) */
+  margin:0;
+}
+
+/* 3. MAIN CONTENT */
+
+/* -- 3a. Hero */
+.hero-wrapper {
+  background:linear-gradient(to right, #000, #2c2626);
+}
+.hero-text {
+  background:url("../images/hero-black-cat.png") center center no-repeat;
+  padding:20px;
+}
+.hero-text h1 {
+  color:#fff;
+  font-size:6em; /* 96px / 16px = 6 */
+  text-shadow:5px 5px 0 var(--accent-color);
+  margin:1.06em 0;
+}
+
+/* -- 3b. Other sections */
+#join-us-section {
+  text-align:center;
+}
+.feature-text {
+  font-size:2em;
+}
+#learn-section {
+  text-align: center;
+}
+#learn-section .content-wrapper {
+  display:flex;
+}
+.col {
+  flex:1 1 0; /* flex-grow:1; flex-shrink:1; flex-basis:0; */
+}
+
+/* 4. FOOTER */
+
+/* -- 4a. Navigation */

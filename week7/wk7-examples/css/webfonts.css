@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@100;300;700&display=swap');
+/********************************************************************
+ * TABLE OF CONTENTS
+ * =================
+ * 1. GENERAL STYLES
+ * 2. LAYOUT
+ * 3. FONT STUFF
+ ********************************************************************/
+@font-face {
+  font-family: "Advent Pro";
+  src: url('fonts/adventpro-regular-webfont.woff') format('woff');
+}
+ 
+:root {
+  --accent-color:red;
+}
+/* 1. GENERAL STYLES */
+body {
+  margin:0; /* remove gap all around page edges */
+}
+
+/* 2. LAYOUT */
+#header, #footer {
+  background-color:#000;
+  padding:1em 2em;
+  color:#fff;
+}
+
+/* 3. FONT STUFF */
+body {
+  font-family:"Poppins",sans-serif;
+  font-weight:300;
+}
+h1, h2, h3 {
+  font-family:"Merriweather",serif;
+}
+ul {
+  font-family:"Advent Pro", sans-serif;
+}
+a {
+  color:var(--accent-color);
+}
+.icon {
+  font-size:5em;
+}
+/* CSS pseudo-element icon embedding */
+.icon-small::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right:10px;
+}
+.pdf::before {
+  font:var(--fa-font-solid);
+  content:"\f1c1";
+  color:red;
+}
+.docx::before {
+  font:var(--fa-font-solid);
+  content:"\f1c2";
+  color:blue;
+}

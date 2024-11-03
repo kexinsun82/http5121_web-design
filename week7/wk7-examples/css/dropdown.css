@@ -1,0 +1,26 @@
+nav ul {
+  list-style:none;
+  padding-left:0;
+}
+.inline-menu {
+  display:flex;
+  column-gap:5em;
+}
+.inline-menu li {
+  position:relative;
+}
+.inline-menu ul {
+  position:absolute;
+  left:-10000px; /* use left if using absolute position to hide */
+  /* width:1px;
+  height:1px; */
+  background-color:bisque;
+  padding:1em;
+}
+.inline-menu li:hover > ul {
+  left:-1em;
+}
+.inline-menu ul li:hover > ul {
+  left:calc(100% + 1em); /* because of 1em padding on the right of the parent li */
+  top:-1em; /* because of 1em padding on the top */
+}

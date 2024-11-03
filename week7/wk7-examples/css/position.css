@@ -1,0 +1,101 @@
+/************************************************
+ * CSS POSITIONING
+ * ===============
+ * The different position types have been colour-coded.
+ ************************************************/
+
+div { 
+  padding:1em; 
+}
+
+/* STICKY */
+#sticky {
+  background-color:yellow;
+
+  position:sticky;
+  top:0; 
+}
+
+/* FIXED */
+#fixed-parent {
+  background-color:#76e8bc;
+  height:200px;
+  width:500px;
+}
+#fixed-parent,
+#fixed-parent > * {
+  border:2px solid #23b980;
+  color:#fff;
+}
+#fixed-1 {
+  background-color:#586b64;
+  position:fixed;
+  top:50px;
+  left:50px;
+}
+#fixed-2 {
+  background-color:#03271a;
+}
+
+/* RELATIVE */
+#relative-parent {
+  background-color:orange;
+}
+#relative-parent,
+#relative-parent > * {
+  border:2px solid #ee8300;
+}
+#relative-1 {
+  background-color:#ffc681;
+
+  position:relative;
+  top:20px;
+  left:20px;
+}
+#relative-2 {
+  background-color:#ed9325
+}
+
+/* ABSOLUTE */
+
+/* Try with line 63 commented out and uncommented to see the difference. */
+#absolute-parent {
+  position:relative; /* this is now not a static element */
+
+  background-color:#b8b8ff;
+}
+#absolute-parent,
+#absolute-parent > * {
+  border:2px solid blue;
+}
+
+#absolute-1 {
+  background-color:#303076;
+  color:#fff;
+
+  position:absolute;
+  top:50%;
+} 
+#absolute-2 {
+  background-color:#9292c5;
+}
+
+
+/* try this too (with the above #child-1 commented out) */
+/*
+#child-1 {
+  position:absolute;
+  top:50%;
+}
+*/
+
+
+/* POSITION:FIXED */
+/* Fixed position is positioned relative to the window. */
+/*
+#child-1 {
+  position:fixed;
+  top:10px;
+  right:25px;
+}
+*/
