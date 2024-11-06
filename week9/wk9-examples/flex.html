@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to media queries</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/flex.css">
+    <script async defer src="js/script.js"></script>
+  </head>
+  <body>
+    <a id="skip-link" href="#main">Skip to main content</a>
+    <header id="header">
+      <h2 id="site-name"><a href="#">Site name</a></h2>
+      <nav id="main-navigation" aria-label="Main navigation">
+        <!--The menu toggle is nav-related so it goes in nav.-->
+        <!--A button element is the most appropriate for a toggle.-->
+        <button class="menu-toggle" onclick="toggleMenu()"><span class="menu-icon"></span>Menu</button>
+        <ul id="main-menu" class="show-small">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact us</a></li><!-- Listen to the difference between this (in ChromeVox) -->
+          <li><a href="#">CONTACT US</a></li><!-- and this -->
+        </ul>
+      </nav>
+    </header>
+    <div class="flex-container-row">
+      <main id="main"><!-- order: 0 -->
+        <header class="image-title-overlay">
+          <h1 class="title">Example title</h1>
+          <!-- To serve the same image but for different resolutions use img srcset -->
+          <img alt="Black cat staring intently"
+            src="images/cat-black-hero_small.jpg"
+            srcset="images/cat-black-hero_large.jpg 2x"
+          >
+        </header>
+        <p>My main content here...</p>
+        
+        <section id="suggested-articles">
+          <h2>Suggested Articles</h2>
+          <div class="flex-container-row">
+            <div class="flex-item">
+              <a href="#"><img src="images/dog.webp" width="150" alt="Pug splooting"></a>
+              <h3><a href="#">Article 1</a></h3>
+            </div> 
+            <div class="flex-item">
+              <a href="#"><img src="images/dog.webp" width="150" alt="Pug splooting"></a>
+              <h3><a href="#">Article 2</a></h3>
+            </div> 
+            <div class="flex-item">
+              <a href="#"><img src="images/dog.webp" width="150" alt="Pug splooting"></a>
+              <h3><a href="#">Article 3</a></h3>
+            </div> 
+          </div>
+        </section>
+        <section class="form-section">
+          <h2>Comments</h2>
+          <form method="post">
+            <div class="form-field inline">
+              <!-- This label is not pointing to the input. With ChromeVox on, put the focus on the name input. Next, put the focus on the textarea. What's the difference? -->
+              <label>Your name:</label>
+              <input type="text" id="name" name="name" placeholder="e.g. John Doe">
+            </div>
+            <div class="form-field block">
+              <label for="comment">Share your thoughts about this article:</label>
+              <textarea id="comment" name="comment" placeholder="Write your comment here."></textarea>
+            </div>
+            <button type="submit">Post comment</button>
+          </form>
+        </section>
+      </main>
+      <aside id="sidebar-one"><!-- order: -1 -->
+        <div id="color-example">
+          <!-- The following are examples of using colour to indicate correct and incorrect answers for a trivia question. -->
+          <div>
+            <p>(Good example) Leonardo da Vinci painted the Mona Lisa.</p>
+            <div class="correct">(Correct!) True</div>
+            <div class="wrong">(Wrong) False</div>
+          </div>
+          <div>
+            <p>(Bad example) Leonardo da Vinci painted the Mona Lisa.</p>
+            <div class="correct">True</div>
+            <div class="wrong">False</div>
+          </div>
+        </div>
+      </aside>
+      <aside id="sidebar-two"><!-- order: 0 -->
+        <h2>Featured cat</h2>
+        <p>A random paragraph</p>
+        <picture id="cat">
+          <source media="(min-width:768px)" srcset="images/cat-on-beach.jpg" />
+          <source srcset="images/cat-on-beach-cropped.jpg" /><!-- default/fallback image -->
+          <img src="images/cat-on-beach.jpg" alt="Tuxedo cat sitting on beach">
+        </picture>
+      </aside>
+    </div>
+    <footer id="footer">
+      Footer content
+    </footer>
+  </body>
+</html>

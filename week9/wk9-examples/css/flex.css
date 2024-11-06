@@ -1,0 +1,202 @@
+/******************************************************
+ * TABLE OF CONTENTS
+ * =================
+ * 1. GENERAL STYLES
+ * 2. LAYOUT EXAMPLE
+ * 3. BASIC MENU
+ * 4. Responsive
+ */
+
+/* 1. GENERAL STYLES */
+html {
+  box-sizing:border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing:inherit;
+}
+:focus {
+  outline:2px solid red;
+}
+.form-section:focus-within {
+  background-color:#ffe7b8;
+  box-shadow:0 4px 5px rgba(0,0,0,0.3);
+  outline:2px solid red;
+}
+.form-section {
+  background-color:#fff3d7;
+  padding:1em 1.5em 2em 1.5em;
+  border-radius:0.8em;
+}
+.form-field.inline * {
+  display:inline-block;
+}
+.form-field.block * {
+  display:block;
+}
+#skip-link {
+  display:block;
+  background-color:#000;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  padding:0.5em 0.8em;
+  border-radius:0 0 0.8em 0.8em;
+
+  width:180px;
+  position:absolute;
+  top:0;
+
+  left:-10000px;
+}
+#skip-link:focus {
+  left:calc(50% - 90px); /* put left edge 50% across minus half the width (because width is 180px) which will center in the page horizontally */
+}
+section {
+  margin-bottom:2em;
+}
+.correct {
+  color:green;
+}
+.wrong {
+  color:red;
+}
+img {
+  /* make images responsive */
+  max-width:100%;
+  height:auto;
+}
+.image-title-overlay .title {
+  position:absolute;
+  color:#fff;
+  text-shadow:2px 2px 0 orange;
+}
+h1.title {
+  /* font-size:max(2em, 5vw); */ /* max() always chooses the largest value. This effectively sets a MINIMUM size. */
+  font-size: clamp(2em, 5vw, 6em); /* clamp(<min>, <ideal>, <max>); */
+}
+/* 2. LAYOUT EXAMPLE */
+.flex-container-row,
+#main, header, #suggested-articles, 
+.col, #sidebar-one, #sidebar-two, #footer {
+  border:1px solid #000;
+}
+#header, #footer,
+#main, #sidebar-one, #sidebar-two {
+  padding:1em;
+}
+
+.flex-container-row {
+  padding:1em;
+  border:2px solid #c498ff; /* so flex container is visible */
+  
+  /* FLEX CONTAINER STUFF BELOW */
+  display:flex; /* set container to use flexbox */
+  flex-flow:row wrap;
+  gap:1em;
+}
+.flex-item {
+  border:2px solid #fdd489; /* so flex item is easily visible */
+
+  flex:1 0 0;
+}
+
+#main {
+  flex:2 0 0;
+}
+#sidebar-one, #sidebar-two {
+  flex:1 0 0;
+}
+#sidebar-one {
+  order:-1;
+}
+
+#suggested-articles img {
+  width:100%; /* force full width */
+}
+#cat img {
+  /* max-width: 100%;
+  width: 350px; */
+  width: min(350px, 100%);
+}
+
+
+/* 3. BASIC MENU */
+
+/* Default inline menu */
+#main-navigation ul {
+  padding:0;
+  display:flex;
+  column-gap:2em;
+  list-style:none;
+}
+
+/* Menu toggle */
+.menu-icon {
+  width:1.25em;
+  height:1em;
+  display: inline-block;
+  border-top:3px solid #000; /* draw a 3px line at the top */
+  padding-top:3px; /* space between top line and middle line (::before) */
+  margin-right:5px; /* space between icon and text */
+  vertical-align:top; /* need this so that if adding margin-top we can push the icon down (by default inline elements align vertically to the bottom) */
+  margin-top:1.5px;
+}
+/* the ::before and ::after will stack below the .menu-icon border (above rule) */
+.menu-icon::before,
+.menu-icon::after {
+  content:"";
+  width:1.25em; /* same width as .menu-icon */
+  display:block; /* make these stack above and below .menu-icon */
+  border-bottom:3px solid #000;
+}
+.menu-icon::before {
+  margin-bottom:3px; /* space between middle line and bottom line */
+}
+/* .menu-toggle {
+  display: none;
+} */
+
+/* 4. Responsive Stuff */
+/* Common breakpoints are 
+- 1500px
+- 1366px
+- 1024px
+- 960px
+- 768px
+- 540px
+- 480px
+- 320px
+ */
+ @media screen and (max-width: 1024px) {
+  #sidebar-one {
+    order: 1;
+    flex-basis: 100%;
+  }
+  main {
+    flex-grow: 3;
+  }
+ }
+
+ @media screen and (max-width: 480px) {
+  #main, #sidebar-two {
+    flex-basis: 100%;
+  }
+  #siderbar-one {
+    order: 0;
+  }
+  #main-menu {
+    display: none !important;  
+  }
+  #main-menu.show-small {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    background-color: #ddd;
+    z-index: 10;
+  }
+  .menu-toggle {
+    display: block;
+  }
+ }
