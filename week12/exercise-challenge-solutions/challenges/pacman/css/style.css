@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/* PAGE STYLING */
+body {
+  background:black;
+}
+#game-title {
+  color:yellow;
+  text-align:center;
+  font:normal 4em 'Bungee Shade', cursive;
+  margin:1rem 0;
+}
+/* ANIMATION RULES */
+@keyframes pacman-top {
+  0% {
+    transform:rotate(0);
+  }
+  50% {
+    transform:rotate(-45deg);
+  }
+  100% {
+    transform:rotate(0);  
+  }
+}
+@keyframes pacman-bottom {
+  0% {
+    transform:rotate(0);
+  }
+  50% {
+    transform:rotate(45deg);
+  }
+  100% {
+    transform:rotate(0);  
+  }
+}
+/* animation for Pacman's rotation as he moves around the perimeter
+   of the square */
+@keyframes pacman-rotate {
+  25% {
+    transform:rotate(0); /* top-right corner */
+  }
+  26% {
+    transform:rotate(90deg);
+  } 
+  50% {
+    transform:rotate(90deg); /* bottom right corner */
+  }
+  51% {
+    transform:rotate(180deg);
+  }
+  75% {
+    transform:rotate(180deg); /* bottom left corner */
+  }
+  76% {
+    transform:rotate(270deg)
+  }
+  99% {
+    transform:rotate(270deg);
+  }
+  100% {
+    transform:rotate(360deg); /* top left corner */
+  }
+}
+@keyframes pacman-move {
+  0% {
+    top:0;
+    left:0;
+  }
+  25%, 26% {
+    top:0;
+    left:calc(100% - 50px);
+  }
+  /*26% {
+    top:0;
+    left:calc(100% - 50px);
+  }*/
+  50%, 51% {
+    top:calc(100% - 50px);
+    left:calc(100% - 50px);
+  }
+  /*51% {
+    top:calc(100% - 50px);
+    left:calc(100% - 50px);
+  }*/
+  75%, 76% {
+    top:calc(100% - 50px);
+    left:0;
+  }
+  /* 76% {
+    top:calc(100% - 50px);
+  } */
+  100% {
+    top:0;
+    left:0;
+  }
+}
+#game-area {
+  border:10px solid red;
+  height:270px;
+  max-width:270px;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden; 
+  background:url(../images/dot.png) top left repeat;
+}
+#pacman {
+  width:50px;
+  height:50px;
+  position:relative;
+  z-index:100;
+  animation:pacman-move 20s linear,
+            pacman-rotate 20s linear;
+}
+#pacman::before, #pacman::after {
+  content:"";
+  display:block;
+  width:50px;
+  height:25px;
+  background-color:yellow;
+}
+#pacman::before {
+  border-radius:25px 25px 0 0;
+  transform-origin:bottom center;
+  animation:pacman-top 1s infinite linear;
+}
+#pacman::after {
+  border-radius:0 0 25px 25px;
+  transform-origin:top center;
+  animation:pacman-bottom 1s infinite linear;
+}
+
+/* MOVING BLACK BARS TO HIDE DOTS TO MAKE IT LOOK
+ * LIKE THE DOTS ARE BEING EATEN
+ */
+[id$="-bar"] {
+  height:50px;
+  width:100%;
+  background:black;
+  position:absolute;
+}
+@keyframes leftbar {
+  0% {
+    left:calc(-100% + 50px);
+    top:0;
+  }
+  100% {
+    left:0;
+    top:0;
+  }
+}
+@keyframes topbar {
+  0% {
+    top:22px;
+    right:0;
+  }
+  100% {
+    top:100%;
+    right:0;
+  }
+}
+@keyframes rightbar {
+  0% {
+    right:calc(-100% + 22px);
+    bottom:0;
+  }
+  100% {
+    right:0;
+    bottom:0;
+  }
+}
+@keyframes bottombar {
+  0% {
+    left:0;
+    top:calc(100% - 50px);  /* 50px + 23px */
+  }
+  100% {
+    left:0;
+    top:0;
+  }
+}  
+#left-bar {
+  animation:leftbar 5s steps(4) both;  
+}
+#top-bar {
+  transform-origin:top right;
+  transform:rotate(90deg);  
+  animation:topbar 5s 5s steps(4) both;
+}
+#right-bar {
+  animation:rightbar 5s 10s steps(4) both;
+}
+#bottom-bar {
+  transform-origin:left bottom;
+  transform:rotate(90deg); 
+  animation:bottombar 5s 14s steps(4) both; 
+}

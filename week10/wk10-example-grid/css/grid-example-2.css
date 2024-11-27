@@ -1,0 +1,37 @@
+:root {
+  --purple: #9393ff;
+  --orange: #ffdc9c;
+}
+
+.container-2 {
+  background-color: var(--purple);
+  padding:1em;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 50px);
+}
+.item {
+  background-color: var(--orange);
+  border:2px solid orange;
+}
+.item-1 {
+  background-color: yellow;
+  border:2px solid #000;
+  grid-row: 2 / 4;
+  grid-column: 2 / 4;
+}
+
+/* auto-fit card example */
+/* useful: https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/ */
+.grid {
+  display:grid;
+  gap:1em;
+  /* auto-fit will auto-calculate what can fit based on given column track size */
+  grid-template-columns:repeat(auto-fit, 200px);
+  grid-auto-rows:300px; /* set all possible row heights to 300px */
+}
+.card {
+  padding:1em;
+  border:1px solid #000;
+  border-radius:5px;
+}

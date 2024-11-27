@@ -1,0 +1,102 @@
+#cradle {
+  border:3vh solid #000;
+  border-bottom:none;
+  border-radius:1.5vh 1.5vh 0 0;
+  width:60vw;
+  height:60vh; /* ball plus wire = 50vh, so make this a little taller */
+  margin:0 auto;
+  text-align:center;
+}
+#cradle::after {
+  content:"";
+  display:block;
+  /*border-bottom:5vh solid brown;*/
+}
+.ball {
+  position:relative;
+  display:inline-block;
+  width:10vh;
+  height:calc(40vh + 10vh); /* ball container height = height of wire + height of ball */
+  margin-right:-4px; /* remove small gap */
+  /*top:40vh; /* take into account wire - see below */
+  /* set the transform origin to the top end of the wire */
+  transform-origin:top center;
+  z-index:-10;
+  top:-2px; /* pull everything up slightly so end of wire doesn't get exposed when rotating */
+  /* border:1px dashed black; */
+}
+
+.ball::before {
+  /* use this for the "wire" */
+  content:""; /* force the ::before to show in DOM */
+  position:absolute;
+  width:1px;
+  height:40vh;
+  border-left:0.5vh solid #555;
+}
+.ball::after {
+  content:""; /* this forces the ::after to show */
+  position: absolute;
+  width:10vh; /* always have a diameter a 10th the height of the viewport */
+  height:10vh; /* height is the same for a circle */
+  border-radius:50%;
+  /* use this for the shiny white spot */
+  background:radial-gradient(circle at 30% 30%, #fff 2%, #eee 20%, #999);
+  /* place ball in bottom of .ball container */
+  bottom:0;
+  left:0;
+}
+.ball:first-child {
+  animation:first-ball-swing 1.5s infinite ease-in-out;
+}
+.ball:first-child::after {
+  /* make sure ball shine does not rotate */
+  animation:first-ball-shine 1.5s infinite ease-in-out;
+}
+.ball:last-child {
+  animation:last-ball-swing 1.5s infinite ease-in-out both 0.75s;
+}
+.ball:last-child::after {
+  animation:last-ball-shine 1.5s infinite ease-in-out both 0.75s;
+}
+.ball:hover {
+  animation-play-state:paused;
+}
+@keyframes first-ball-swing {
+  /*
+    0% = 0deg
+    25% = 30deg
+    50% = 0deg
+    100% = 0deg
+  */
+  0%, 50% {
+    transform:rotate(0deg);
+  }
+  25% {
+    transform:rotate(30deg);
+  }
+}
+@keyframes first-ball-shine {
+  0%, 50% {
+    transform:rotate(0deg);
+  }
+  25% {
+    transform:rotate(-30deg);
+  }
+}
+@keyframes last-ball-swing {
+  0%, 50% {
+    transform:rotate(0deg);
+  }
+  25% {
+    transform:rotate(-30deg);
+  }
+}
+@keyframes last-ball-shine {
+  0%, 50% {
+    transform:rotate(0deg);
+  }
+  25% {
+    transform:rotate(30deg);
+  }
+}

@@ -1,0 +1,51 @@
+#stage {
+  height:300px;
+  border:1px solid #000;
+}
+#ball {
+  position:relative; /* important so you can move this with left/right/top/bottom */
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  background-color:blue;
+  /*
+  animation: [animation-name] [animation-duration] [animation-iteration-count] [animation-direction] [animation-timing-function] [animation-fill-mode] [animation-delay];
+  */
+  animation:ball-move 2s 2 alternate-reverse steps(3) both 1s,
+            color-change 3s forwards;
+}
+#stage:hover #ball {
+  animation-play-state:paused;
+}
+
+@keyframes ball-move {
+  0% {
+    /* first keyframe at the start of the animation */
+    top:0;
+    left:0;
+  }
+  50% {
+    /* keyframe at the half-way mark through the duration */
+    top:calc(100% - 75px);
+    left:calc(50% - 37.5px);
+  }
+  100% {
+    /* keyframe at the end of the animation */
+    top:0;
+    left:calc(100% - 75px);
+  }
+}
+@keyframes color-change {
+  0% {
+    background-color: blue;
+  }
+  25% {
+    background-color: yellow;
+  }
+  75% {
+    background-color: orange;
+  }
+  100% {
+    background-color: purple;
+  }
+}

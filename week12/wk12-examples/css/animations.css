@@ -1,0 +1,16 @@
+#stage {
+  height:300px;
+  border:1px solid #000;
+}
+#ball {
+  position:relative; /* important so you can move this with left/right/top/bottom */
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  background-color:blue;
+  /*
+  animation: [animation-name] [duration] [iteration-count] [animation-direction] [timing-function] [fill-mode] [delay];
+  */
+  
+}
+
