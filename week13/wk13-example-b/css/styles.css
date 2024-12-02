@@ -1,0 +1,16 @@
+#header, #footer, #main, [id^="side"] {
+  border:1px solid #000;
+}
+#side-1 {
+  order:-1;
+}
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  #side-1 {
+    order:1;
+  }
+}
+@media screen and (max-width: 39.9375em) {
+  #side-1 {
+    order:0;
+  }
+}
